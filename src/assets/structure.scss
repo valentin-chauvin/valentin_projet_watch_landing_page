@@ -12,80 +12,13 @@ html {
 }
 
 body {
-  background: url('../images/gay2.jpg') center no-repeat;
-  background-size: cover;
   font-family: 'Lato', sans-serif;
 }
 
 .wrapper {
-  background-color: rgba(0,0,0,0.5);
   height: 100vh;
-  @include flex_row();
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .content {
-  background-color: rgba(255,255,255,0.85);
-  text-align: center;
-  width: 33vw;
-  padding: 9vh 4vw 4vh 4vw;
-  border-radius: 8px;
-  -webkit-box-shadow: 0 0 60px 0 rgba(0,0,0,0.75);
-  box-shadow: 0 0 60px 0 rgba(0,0,0,0.75);
-  animation-duration: 800ms;
-  animation-name: size;
-  .image--container {
-    background: url('../images/icon--cannabis.svg') center no-repeat;
-    background-size: cover;
-    width: 60px;
-    height: 60px;
-    margin: auto;
-    margin-top: 10vh;
-  }
-  h1 {
-    color: #369933;
-    font-weight: 900;
-    font-size: 5em;
-    margin: auto;
-    padding-bottom: 7vh;
-    animation-duration: 3s;
-    animation-name: color;
-  }
-  p {
-    font-weight: 300;
-    font-size: 1.2em;
-    margin: auto;
-    line-height: 3vh;
-    em {
-      color: #369933;
-      font-style: normal;
-      font-weight: 900;
-      animation-duration: 3s;
-      animation-name: color;
-    }
-  }
-}
 
-@keyframes size {
-  from {
-    opacity: 0;
-    width: 0;
-  }
-
-  to {
-    opacity: 1;
-    width: 33vw;
-  }
-}
-
-@keyframes color {
-  from {
-    color: black;
-  }
-
-  to {
-    color: #369933;
-  }
 }
