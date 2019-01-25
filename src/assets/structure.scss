@@ -23,29 +23,6 @@ body {
     height: auto;
     overflow: visible;
   }
-  .big_text {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1000;
-    animation-duration: 4s;
-    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
-    animation-name: appear;
-    animation-fill-mode: backwards;
-    p {
-      color: rgba(0,0,0,0.29);
-      font-weight: 900;
-      font-size: 18em;
-      letter-spacing: 15px;
-      position: absolute;
-      top: 35vh;
-      left: 11vw;
-    }
-  }
 }
 
 ul {
@@ -58,15 +35,24 @@ a {
 
 h1 {
   font-weight: 900;
-  font-size: 6em;
+  font-size: 5em;
+  letter-spacing: 5px;
   @media screen and (max-width: 1200px) {
     font-size: 4em;
   }
 }
 
 h2 {
-  font-weight: 900;
-  font-size: 1.8em;
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 1em;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  opacity: 0.5;
 }
 
 p {
@@ -102,24 +88,22 @@ header {
     padding: 0;
   }
   .bloc-logo {
-    background-color: $color-green;
-    height: 11vh;
-    width: 120px;
-    @include flex_row();
-    align-items: center;
-    justify-content: center;
     a {
-      width: 80%;
-      text-align: center;
+      background-color: $color-white;
+      @include flex_row();
+      align-items: center;
+      justify-content: center;
+      width: 5.5vw;
+      height: 5.5vw;
     }
     img {
-      width: 80%;
+      width: 60%;
       height: auto;
-      transition: ease-in-out 0.2s;
+      transition: ease-in-out 0.3s;
     }
     a:hover img {
-      width: 65%;
-      transition: ease-in-out 0.2s;
+      opacity: 0.6;
+      transition: ease-in-out 0.6s;
     }
   }
   .menu {
@@ -132,31 +116,33 @@ header {
     }
     ul {
       @include flex_row();
-      width: 40%;
       height: 100%;
       align-items: center;
       justify-content: center;
       li {
         flex: auto;
         a {
-          font-weight: 900;
-          font-size: 1.2em;
+          font-weight: 400;
+          font-size: 1em;
+          letter-spacing: 2px;
           color: $color-white;
+          opacity: 0.5;
           position: relative;
-          padding-bottom: 1vh;
-          transition: ease-in-out 0.2s;
+          padding: 2vh 2vw;
+          transition: ease-in-out 0.3s;
           img {
-            width: 30px;
+            width: 25px;
             height: auto;
+            opacity: 0.5;
             transition: ease-in-out 0.3s;
           }
         }
         a:hover {
-          color: $color-green;
-          transition: ease-in-out 0.2s;
+          opacity: 1;
+          transition: ease-in-out 0.6s;
         }
         .active {
-          border-bottom: 3px solid $color-green;
+          opacity: 1;
         }
       }
       .rolex_icon {
@@ -164,15 +150,15 @@ header {
         flex: 0.5;
       }
       .rolex_icon:hover a img {
-        transform: rotateZ(360deg);
-        transition: ease-in-out 0.3s;
+        opacity: 1;
+        transition: ease-in-out 0.6s;
       }
     }
   }
 }
 
 .content {
-  border-left: 3px solid rgba(255,255,255,0.15);
+  border-left: 1px solid rgba(255,255,255,0.15);
   height: 100vh;
   margin: 0 4vw;
   position: relative;
@@ -186,7 +172,7 @@ header {
     @include flex_row();
     align-items: center;
     height: 100%;
-    margin: 0 4vw;
+    margin: 0 5.5vw;
     font-weight: 300;
     @media screen and (max-width: 1200px) {
       @include flex_column();
@@ -207,27 +193,30 @@ header {
         padding-top: 10vh;
       }
       h1 {
-        padding-bottom: 3vh;
+        margin-bottom: 1vh;
         @media screen and (max-width: 1200px) {
-          padding-top: 1vh;
-          padding-bottom: 4vh;
+          margin-bottom: 2vh;
         }
       }
       p {
-        padding-bottom: 4vh;
+        margin-bottom: 4vh;
+        line-height: 2em;
         @media screen and (max-width: 1200px) {
           padding-bottom: 5vh;
         }
       }
       .button {
-        background-color: $color-green;
-        display: inline-block;
+        border-top: 1px solid $color-white;
+        border-bottom: 1px solid $color-white;
+        display: block;
+        width: 19vw;
         a {
           @include flex_row();
           align-items: center;
           color: $color-white;
-          font-weight: 900;
-          font-size: 1.2em;
+          font-weight: 300;
+          font-size: 1em;
+          letter-spacing: 4px;
           padding: 1.5vh 2vw;
           @media screen and (max-width: 1200px) {
             padding: 15px 25px;
@@ -235,110 +224,69 @@ header {
           img {
             width: 18px;
             padding-left: 1vw;
-            transition: ease-in-out 0.2s;
+            transition: ease-in-out 0.3s;
           }
         }
         a:hover img {
           padding-left: 2vw;
-          transition: ease-in-out 0.2s;
+          transition: ease-in-out 0.3s;
         }
       }
     }
-    section::before {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      font-size: 1.6em;
-      letter-spacing: 15px;
-      content: 'SEA-DWELLER';
-      opacity: 0.5;
-      @media screen and (max-width: 1200px) {
-        font-size: 1.4em;
-      }
-    }
     .block_watch {
-      width: 40vw;
+      @include flex_column();
+      align-items: center;
+      justify-content: center;
       height: 100vh;
       text-align: center;
       animation-duration: 1.5s;
       animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
       animation-name: slidein;
       animation-fill-mode: backwards;
-      animation-delay: 900ms;
+      animation-delay: 1.8s;
       @media screen and (max-width: 1200px) {
         width: 100%;
         height: auto;
         order: 1;
       }
       img {
-        height: 70vh;
-        width: auto;
-        padding-top: 11vh;
+        width: 60%;
         filter: drop-shadow(-40px 30px 80px rgba(0,0,0,0.65));
-        @media screen and (max-width: 1200px) {
-          padding-top: 0;
-          height: 60vh;
-        }
       }
     }
-    .block_button_buy {
+    .block_button_discover {
       @include flex_column();
       justify-content: flex-end;
       align-items: flex-end;
       flex: auto;
-      width: 120px;
+      width: 8vw;
       height: 100%;
+      position: absolute;
+      right: 0;
       @media screen and (max-width: 1200px) {
         order: 3;
       }
-      .price {
-        width: 120px;
-        text-align: center;
-        padding-bottom: 12vh;
-        animation-duration: 600ms;
-        animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
-        animation-name: size;
-        animation-fill-mode: backwards;
-        animation-delay: 2.9s;
-        p {
-          font-weight: 900;
-          font-size: 2.3em;
-        }
-        p::before {
-          content: 'Prix';
-          font-weight: 400;
-          font-size: 0.55em;
-          display: inline-block;
-          width: 100%;
-          text-align: left;
-          opacity: 0.5;
-        }
-      }
-      .button_buy {
-        background-color: $color-green;
-        width: 120px;
-        height: 28vh;
+      .button_discover {
+        background-color: $color-white;
+        width: 5.5vw;
+        height: 25vh;
         animation-duration: 600ms;
         animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
         animation-name: slidein_3;
         animation-fill-mode: backwards;
-        animation-delay: 2.5s;
+        animation-delay: 300ms;
         a {
           padding: 2vh;
-          color: $color-white;
-          font-weight: 900;
-          font-size: 1.5em;
+          color: $color-black;
+          font-weight: 400;
+          font-size: 1.2em;
           display: inline-block;
-          transition: ease 0.2s;
-        }
-        a::after {
-          content: '11550€';
-          font-weight: 300;
-          font-size: 0.8em;
-          display: inline-block;
+          transition: ease-in-out 0.2s;
+          margin-top: 1vh;
         }
         a:hover {
-          color: $color-dark-blue;
-          transition: ease-in-out 0.2s;
+          opacity: 0.75;
+          transition: ease-in-out 0.6s;
         }
       }
     }
@@ -346,21 +294,21 @@ header {
   .features {
     @include flex_row();
     align-items: center;
-    background-color: rgba(22,37,58,0.75);
+    background-color: rgba(9,16,30,0.75);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter:  blur(10px);
     height: 15vh;
-    width: 72vw;
+    width: 85vw;
     padding-left: 3vw;
     padding-right: 8vw;
     position: fixed;
     bottom: 0;
     right: 0;
-    animation-duration: 800ms;
+    animation-duration: 1300ms;
     animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
     animation-name: slidein_2;
     animation-fill-mode: backwards;
-    animation-delay: 1.4s;
+    animation-delay: 300ms;
     @media screen and (max-width: 1200px) {
       position: inherit;
       width: 100%;
@@ -380,21 +328,23 @@ header {
         animation-fill-mode: backwards;
       }
       .icon_feature_1 {
-        animation-delay: 2.1s;
+        animation-delay: 1.3s;
       }
       .icon_feature_2 {
-        animation-delay: 2.2s;
+        animation-delay: 1.4s;
       }
       .icon_feature_3 {
-        animation-delay: 2.3s;
+        animation-delay: 1.5s;
       }
       .icon_feature_4 {
-        animation-delay: 2.4s;
+        animation-delay: 1.6s;
       }
       section {
-        padding-left: 1.5vw;
+        margin-left: 1.5vw;
         p {
           font-weight: 400;
+          font-size: 0.9em;
+          letter-spacing: 1px;
           opacity: 0.5;
         }
       }
@@ -415,7 +365,6 @@ header {
     }
     ul {
       @include flex_column();
-      height: 15vh;
       li {
         @include flex_column();
         justify-content: center;
@@ -423,21 +372,23 @@ header {
         text-align: center;
         a {
           font-weight: 900;
-          font-size: 1.2em;
+          font-size: 0.8em;
           color: $color-white;
+          opacity: 0.5;
+          padding: 2vh 0;
           transform: rotateZ(-90deg);
-          transition: ease-in-out 0.2s;
+          transition: ease-in-out 0.3s;
         }
         .active_language_link {
-          color: $color-green;
+          opacity: 1;
         }
         a:hover {
-          color: $color-green;
-          transition: ease-in-out 0.2s;
+          opacity: 1;
+          transition: ease-in-out 0.6s;
         }
       }
       .active_language {
-        border-right: 3px solid $color-green;
+        border-right: 3px solid $color-white;
       }
     }
   }
@@ -458,11 +409,11 @@ header {
 
 @keyframes slidein_2 {
   from {
-    transform: translateX(83vw);
+    transform: translateY(15vh);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
