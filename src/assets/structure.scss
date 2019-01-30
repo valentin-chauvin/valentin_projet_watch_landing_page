@@ -86,6 +86,7 @@ header {
   @media screen and (max-width: 1200px) {
     width: 100vw;
     padding: 0;
+    height: auto;
   }
   .bloc-logo {
     a {
@@ -95,6 +96,10 @@ header {
       justify-content: center;
       width: 5.5vw;
       height: 5.5vw;
+      @media screen and (max-width: 1200px) {
+        width: 25vw;
+        height: 25vw;
+      }
     }
     img {
       width: 60%;
@@ -155,6 +160,32 @@ header {
       }
     }
   }
+  .block_menu_icon {
+    padding-top: 2vh;
+    position: absolute;
+    right: 4vw;
+    .menu_icon {
+      transition: all 0.3s cubic-bezier(0.25,0.1,0.25,1);
+      &:hover,
+      &:focus {
+        transform: rotate(45deg);
+      }
+      .circle {
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+        background: $color-white;
+        border-radius: 50%;
+        display: block;
+      }
+    }
+  }
+  .menu_overlay {
+    background-color: $color-white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+  }
 }
 
 .content {
@@ -166,7 +197,6 @@ header {
     border: none;
     height: auto;
     margin: 0;
-    padding: 0 10vw;
   }
   .section_1 {
     @include flex_row();
@@ -177,8 +207,8 @@ header {
     @media screen and (max-width: 1200px) {
       @include flex_column();
       height: auto;
-      padding-top: 21vh;
-      margin: 0;
+      padding: 21vh 10vw 0;
+      margin: 0 0 8.5vh;
     }
     section {
       animation-duration: 1.5s;
@@ -202,7 +232,7 @@ header {
         margin-bottom: 4vh;
         line-height: 2em;
         @media screen and (max-width: 1200px) {
-          padding-bottom: 5vh;
+          margin-bottom: 6vh;
         }
       }
       .button {
@@ -210,6 +240,9 @@ header {
         border-bottom: 1px solid $color-white;
         display: block;
         width: 19vw;
+        @media screen and (max-width: 1200px) {
+          width: auto;
+        }
         a {
           @include flex_row();
           align-items: center;
@@ -264,7 +297,7 @@ header {
       position: absolute;
       right: 0;
       @media screen and (max-width: 1200px) {
-        order: 3;
+        display: none;
       }
       .button_discover {
         background-color: $color-white;
@@ -310,14 +343,23 @@ header {
     animation-fill-mode: backwards;
     animation-delay: 300ms;
     @media screen and (max-width: 1200px) {
+      @include flex_column();
+      align-items: flex-start;
       position: inherit;
-      width: 100%;
-      padding: 0 10vw;
+      width: auto;
+      height: auto;
+      padding: 7.5vh 10vw;
     }
     .feature {
       @include flex_row();
       align-items: center;
       flex:auto;
+      @media screen and (max-width: 1200px) {
+        /*@include flex_column();
+        width: 100%;
+        text-align: center;*/
+        margin-bottom: 4.5vh;
+      }
       img {
         display: block;
         height: 80px;
@@ -347,6 +389,11 @@ header {
           letter-spacing: 1px;
           opacity: 0.5;
         }
+      }
+    }
+    .feature:last-child {
+      @media screen and (max-width: 1200px) {
+        margin-bottom: 0;
       }
     }
   }
